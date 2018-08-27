@@ -1,6 +1,12 @@
 CHANGES
 =======
 
+5.0.2
+-----
+
+* Remove extra increments of RetryCallState.attempt\_number #143
+* Added min to exponential backoff
+
 5.0.1
 -----
 
