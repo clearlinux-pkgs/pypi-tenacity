@@ -1,5 +1,5 @@
 PKG_NAME := tenacity
-URL = https://files.pythonhosted.org/packages/90/72/d3fc9322eea3d611cd197a0feada8b18717f041da33b23d8cb83c1b94ece/tenacity-5.0.3.tar.gz
+URL = https://files.pythonhosted.org/packages/62/27/586b688cf8a9f44c8f3726aa1c8c1f008c01befcc2d3889d55dc95aebaa5/tenacity-5.0.4.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
