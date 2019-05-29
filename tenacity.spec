@@ -4,7 +4,7 @@
 #
 Name     : tenacity
 Version  : 5.0.4
-Release  : 8
+Release  : 9
 URL      : https://files.pythonhosted.org/packages/62/27/586b688cf8a9f44c8f3726aa1c8c1f008c01befcc2d3889d55dc95aebaa5/tenacity-5.0.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/62/27/586b688cf8a9f44c8f3726aa1c8c1f008c01befcc2d3889d55dc95aebaa5/tenacity-5.0.4.tar.gz
 Summary  : Retry code until it succeeeds
@@ -13,17 +13,15 @@ License  : Apache-2.0
 Requires: tenacity-license = %{version}-%{release}
 Requires: tenacity-python = %{version}-%{release}
 Requires: tenacity-python3 = %{version}-%{release}
-Requires: futures
 Requires: monotonic
 Requires: six
 BuildRequires : buildreq-distutils3
+BuildRequires : monotonic
 BuildRequires : pbr
+BuildRequires : six
 
 %description
-Tenacity
 ========
-.. image:: https://img.shields.io/pypi/v/tenacity.svg
-:target: https://pypi.python.org/pypi/tenacity
 
 %package license
 Summary: license components for the tenacity package.
@@ -59,7 +57,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554783935
+export SOURCE_DATE_EPOCH=1559109785
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
