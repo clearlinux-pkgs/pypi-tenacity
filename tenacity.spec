@@ -4,7 +4,7 @@
 #
 Name     : tenacity
 Version  : 6.1.0
-Release  : 18
+Release  : 19
 URL      : https://files.pythonhosted.org/packages/de/2c/c705ab21f3638589d75fb529101a9e0b30615f157a639af5b4a87e27ce01/tenacity-6.1.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/de/2c/c705ab21f3638589d75fb529101a9e0b30615f157a639af5b4a87e27ce01/tenacity-6.1.0.tar.gz
 Summary  : Retry code until it succeeds
@@ -21,10 +21,7 @@ BuildRequires : setuptools_scm
 BuildRequires : six
 
 %description
-Tenacity
-========
-.. image:: https://img.shields.io/pypi/v/tenacity.svg
-:target: https://pypi.python.org/pypi/tenacity
+Tenacity is a general-purpose retrying library to simplify the task of adding retry behavior to just about anything.
 
 %package license
 Summary: license components for the tenacity package.
@@ -47,6 +44,7 @@ python components for the tenacity package.
 Summary: python3 components for the tenacity package.
 Group: Default
 Requires: python3-core
+Provides: pypi(tenacity)
 
 %description python3
 python3 components for the tenacity package.
@@ -61,7 +59,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582746948
+export SOURCE_DATE_EPOCH=1582912707
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
