@@ -4,7 +4,7 @@
 #
 Name     : tenacity
 Version  : 6.2.0
-Release  : 29
+Release  : 30
 URL      : https://files.pythonhosted.org/packages/a9/26/dfe61bbfbe7d723fe76ff41960c96161fd32ff303be88bbbdfb428250cd4/tenacity-6.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/a9/26/dfe61bbfbe7d723fe76ff41960c96161fd32ff303be88bbbdfb428250cd4/tenacity-6.2.0.tar.gz
 Summary  : Retry code until it succeeds
