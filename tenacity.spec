@@ -4,7 +4,7 @@
 #
 Name     : tenacity
 Version  : 8.0.1
-Release  : 35
+Release  : 36
 URL      : https://files.pythonhosted.org/packages/2c/f5/04748914f5c78f7418b803226bd56cdddd70ac369b936b3e24f5158017f1/tenacity-8.0.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/2c/f5/04748914f5c78f7418b803226bd56cdddd70ac369b936b3e24f5158017f1/tenacity-8.0.1.tar.gz
 Summary  : Retry code until it succeeds
@@ -14,7 +14,8 @@ Requires: tenacity-license = %{version}-%{release}
 Requires: tenacity-python = %{version}-%{release}
 Requires: tenacity-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : setuptools_scm
+BuildRequires : pypi(setuptools)
+BuildRequires : pypi(setuptools_scm)
 
 %description
 Tenacity
@@ -58,21 +59,21 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1636476511
+export SOURCE_DATE_EPOCH=1641424508
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
 export FFLAGS="$FFLAGS -fno-lto "
 export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
-python3 setup.py build
+python3 -m build --wheel --skip-dependency-check --no-isolation
 
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/tenacity
 cp %{_builddir}/tenacity-8.0.1/LICENSE %{buildroot}/usr/share/package-licenses/tenacity/1128f8f91104ba9ef98d37eea6523a888dcfa5de
-python3 -tt setup.py build  install --root=%{buildroot}
+pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
