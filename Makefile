@@ -1,5 +1,5 @@
 PKG_NAME := pypi-tenacity
-URL = https://files.pythonhosted.org/packages/d3/f0/6ccd8854f4421ce1f227caf3421d9be2979aa046939268c9300030c0d250/tenacity-8.2.2.tar.gz
+URL = https://files.pythonhosted.org/packages/89/3c/253e1627262373784bf9355db9d6f20d2d8831d79f91e9cca48050cddcc2/tenacity-8.2.3.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
